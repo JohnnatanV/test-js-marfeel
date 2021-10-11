@@ -35,7 +35,6 @@ body {
 .content {
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -44,11 +43,18 @@ body {
   position: relative;
 }
 
+.box__chart:nth-child(1) {
+  justify-self: end;
+}
+
+.box__chart:nth-child(3) {
+  justify-self: start;
+}
+
 #revenue,
 #impresions,
 #visits {
   position: relative;
   top: -50%;
-  margin: auto;
   z-index: -1;
 }
