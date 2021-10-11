@@ -1,0 +1,13 @@
+[{
+  "graph": "revenue",
+  "tablet": "120000",
+  "smartphone": "80000"
+},{
+  "graph": "impresions",
+  "tablet": "20000000",
+  "smartphone": "30000000"
+}, {
+  "graph": "visits",
+  "tablet": "480000000",
+  "smartphone": "120000000"
+}]

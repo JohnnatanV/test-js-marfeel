@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100vh;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Main */
+
+.box__content {
+  height: 100%;
+  padding: 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.box__chart {
+  position: relative;
+}
+
+#revenue,
+#impresions,
+#visits {
+  position: relative;
+  top: -50%;
+  margin: auto;
+  z-index: -1;
+}
