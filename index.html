@@ -12,7 +12,6 @@
     />
 
     <link rel="stylesheet" href="./css/style.css" />
-    <!-- <script defer src="./js/d3.js"></script> -->
     <script defer src="./js/app.js"></script>
     <title>Test JS/ Frontend Dev</title>
   </head>
@@ -23,82 +22,77 @@
 
     <main class="box__content">
       <div class="content">
-        <div class="box__chart">
-          <graph-screen
-            graph="revenue"
-            data="./data.json"
-            tablet="tablet"
-            phone="smartphone"
-          ></graph-screen>
-          <!-- <img id="revenue" src="./svg/revenue.svg" alt="" /> -->
+        <div class="box__chart" name="revenue">
+          <div class="box__chart-tittle">
+            <h2 class="tittle"></h2>
+            <p class="value"></p>
+          </div>
           <div class="donutChart" id="revenue"></div>
+          <div class="content__info">
+            <div class="info-data">
+              <h3 class="data-device">tablet</h3>
+              <div class="data-values">
+                <p class="value-porcentage"></p>
+                <p class="value-num"></p>
+              </div>
+            </div>
+            <div class="info-data">
+              <h3 class="data-device">smartphone</h3>
+              <div class="data-values">
+                <p class="value-porcentage"></p>
+                <p class="value-num"></p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="box__chart">
-          <graph-screen
-            graph="impresions"
-            data="./data.json"
-            tablet="tablet"
-            phone="smartphone"
-          ></graph-screen>
+        <div class="box__chart" name="impresions">
+          <div class="box__chart-tittle">
+            <h2 class="tittle"></h2>
+            <p class="value"></p>
+          </div>
           <div class="donutChart" id="impresions"></div>
+          <div class="content__info">
+            <div class="info-data">
+              <h3 class="data-device">tablet</h3>
+              <div class="data-values">
+                <p class="value-porcentage"></p>
+                <p class="value-num"></p>
+              </div>
+            </div>
+            <div class="info-data">
+              <h3 class="data-device">smartphone</h3>
+              <div class="data-values">
+                <p class="value-porcentage"></p>
+                <p class="value-num"></p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="box__chart">
-          <graph-screen
-            graph="visits"
-            data="./data.json"
-            tablet="tablet"
-            phone="smartphone"
-          ></graph-screen>
+        <div class="box__chart" name="visits">
+          <div class="box__chart-tittle">
+            <h2 class="tittle"></h2>
+            <p class="value"></p>
+          </div>
           <div class="donutChart" id="visits"></div>
+          <div class="content__info">
+            <div class="info-data">
+              <h3 class="data-device">tablet</h3>
+              <div class="data-values">
+                <p class="value-porcentage"></p>
+                <p class="value-num"></p>
+              </div>
+            </div>
+            <div class="info-data">
+              <h3 class="data-device">smartphone</h3>
+              <div class="data-values">
+                <p class="value-porcentage"></p>
+                <p class="value-num"></p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script>
-      //set the dimensions and margins of the graph
-      const width = 400,
-        height = 400,
-        margin = 90;
-
-      // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
-      const radius = Math.min(width, height) / 2 - margin;
-
-      // append the svg object
-      const svg = d3
-        .selectAll(".donutChart")
-        .append("svg")
-        .attr("width", width)
-        .attr("height", height)
-        .append("g")
-        .attr("transform", `translate(${width / 2},${height / 2})`);
-
-      // Create dummy data
-      const data = { a: 60, b: 40 };
-
-      // set the color scale
-      const color = d3.scaleOrdinal().range(["#88d342", "#436924"]);
-
-      // Compute the position of each group on the pie:
-      const pie = d3.pie().value((d) => d[1]);
-
-      const data_ready = pie(Object.entries(data));
-
-      // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-      svg
-        .selectAll("whatever")
-        .data(data_ready)
-        .join("path")
-        .attr(
-          "d",
-          d3
-            .arc()
-            .innerRadius(100) // This is the size of the donut hole
-            .outerRadius(radius)
-        )
-        .attr("fill", (d) => color(d.data[0]))
-        .attr("stroke", "none")
-        .style("stroke-width", "2px")
-        .style("opacity", 0.8);
-    </script>
   </body>
 </html>
